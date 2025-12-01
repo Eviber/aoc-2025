@@ -20,14 +20,14 @@
           buildInputs = [
             openssl
             pkg-config
-            eza
-            fd
             rust-bin.beta.latest.default
+            rust-analyzer
           ];
 
           shellHook = ''
             alias ls=eza
             alias find=fd
+            fish
           '';
         };
       }
