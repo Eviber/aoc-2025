@@ -23,5 +23,6 @@ pub fn solve(s: &str) -> i32 {
             }
             let end = delta.rem_euclid(100);
             (count, end)
-        }).0
+        })
+        .0
 }

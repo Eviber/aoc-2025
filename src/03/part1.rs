@@ -5,8 +5,7 @@ fn largest_two_digit_comb(v: Vec<u64>) -> u64 {
         .max_by(|(a_i, a_n), (b_i, b_n)| {
             if a_n != b_n {
                 a_n.cmp(b_n)
-            }
-            else {
+            } else {
                 b_i.cmp(a_i) // ensure the first occurence is selected
             }
         })
@@ -16,7 +15,11 @@ fn largest_two_digit_comb(v: Vec<u64>) -> u64 {
 
 pub fn solve(s: &str) -> u64 {
     s.split_whitespace()
-        .map(|s| s.chars().map(|c| c.to_digit(10).unwrap() as u64).collect::<Vec<_>>())
+        .map(|s| {
+            s.chars()
+                .map(|c| c.to_digit(10).unwrap() as u64)
+                .collect::<Vec<_>>()
+        })
         .map(largest_two_digit_comb)
         .sum()
 }

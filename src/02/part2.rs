@@ -31,8 +31,6 @@ pub fn solve(s: &str) -> u64 {
         .split(',')
         .map(|s| s.split_once('-').unwrap())
         .map(|(start, end)| (start.parse::<u64>().unwrap(), end.parse::<u64>().unwrap()))
-        .flat_map(|(start, end)| {
-            (start..=end).filter(is_repeated)
-        })
+        .flat_map(|(start, end)| (start..=end).filter(is_repeated))
         .sum()
 }

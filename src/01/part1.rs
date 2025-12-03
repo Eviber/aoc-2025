@@ -14,5 +14,6 @@ pub fn solve(s: &str) -> i32 {
                 count += 1;
             }
             (count, acc)
-        }).0
+        })
+        .0
 }
