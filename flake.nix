@@ -22,6 +22,7 @@
             pkg-config
             rust-bin.beta.latest.default
             rust-analyzer
+            bacon
           ];
 
           shellHook = ''
